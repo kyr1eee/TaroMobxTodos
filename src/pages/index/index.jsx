@@ -1,6 +1,8 @@
 import Taro, { Component } from '@tarojs/taro'
 import { View, Button, Text } from '@tarojs/components'
 import { observer, inject } from '@tarojs/mobx'
+import Header from '../../components/Header';
+import TodoList from '../../components/TodoList';
 
 import './index.scss'
 
@@ -50,6 +52,8 @@ class Index extends Component {
         <Button onClick={this.decrement}>-</Button>
         <Button onClick={this.incrementAsync}>Add Async</Button>
         <Text>{counter}</Text>
+        <Header />
+        
       </View>
     )
   }
