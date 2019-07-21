@@ -53,10 +53,10 @@ class Index extends Component {
         <Button onClick={this.incrementAsync}>Add Async</Button>
         <Text>{counter}</Text>
         <Header />
-        
+        <TodoList />
       </View>
     )
   }
 }
 
-export default Index 
+export default Index

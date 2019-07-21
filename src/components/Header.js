@@ -4,22 +4,28 @@ import { inject, observer } from '@tarojs/mobx';
 @inject('todoStore')
 @observer
 class Header extends Component {
+    constructor(props) {
+      super(props);
+      this.textInput = null;
+    }
 
     render() {
-        let textInput = '';
-
+        const { todoStore } = this.props;
         return (
             <View>
                 <Form onSubmit={e => {
                     e.preventDefault();
-                    if(!textInput)
+                    if(!this.textInput)
                         return
-                    todoStore.addTodo(textInput.trim());
-                    textInput.value = '';
+                    // taro Input組件之坑
+                    const { value } = this.textInput.inputRef;
+                    console.log(this.textInput);
+                    todoStore.addTodo(value);
+                    this.textInput.inputRef.value = '';
                 }}>
-                    <Input ref={element => textInput = element} />
-                    <Button type="submit">
-                        Add Todo
+                    <Input type="text" ref={element => this.textInput = element} />
+                    <Button type="primary">
+                        添加计划事项
                     </Button>
                 </Form>
             </View>

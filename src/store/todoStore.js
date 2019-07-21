@@ -1,4 +1,4 @@
-import { observable, action, computed } from "mobx";
+import { observable, action } from "mobx";
 
 class Store {
     @observable todos = [];
@@ -15,10 +15,10 @@ class Store {
         this.todos.filter(index => index + 1 === id)
     }
 
-    @computed get todos() {
+    get todos() {
         return this.todos;
     }
-    
+
 }
 
 export default new Store();
