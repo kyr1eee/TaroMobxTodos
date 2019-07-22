@@ -1,0 +1,35 @@
+.container {
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .add-btn {
+        display: inline-block;
+        border: none;
+        padding: 0;
+        width: 10%;
+        height: 60px;
+        line-height: 60px;
+        font-size: 60px;
+        text-align: center;
+        color: #3535351f;
+    }
+
+    .input-wrapper {
+        display: inline-block;
+        width: 90%;
+        .todo-input {
+            width: 90%;
+        }
+
+        .line {
+            height: 2px;
+            width: 100%;
+            background-color: #3535351f;
+        }
+    }
+
+    
+    
+}

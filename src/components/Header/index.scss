@@ -1,0 +1,35 @@
+.header-container {
+    .header-title {
+        display: block;
+        height: 100px;
+
+        .header-img {
+            width: 50px;
+            height: 50px;
+            padding: 0 20px;
+            animation: imgMove 1.2s linear infinite;
+        }
+
+        .drag-box {
+            display: inline-block;
+            // position: relative;
+
+            .header-animal {
+                width: 200px;
+                height: 120px;
+            }
+        }
+        
+    }
+    
+}
+
+@keyframes imgMove {
+    0%, 100% {
+        transform: perspective(500px) translate3d(0, 0, 100px);
+    }
+
+    50% {
+        transform: perspective(500px) translate3d(0,-20px, 0px)
+    }
+}

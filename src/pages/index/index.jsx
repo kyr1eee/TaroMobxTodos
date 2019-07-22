@@ -3,11 +3,13 @@ import { View, Button, Text } from '@tarojs/components'
 import { observer, inject } from '@tarojs/mobx'
 import Header from '../../components/Header';
 import TodoList from '../../components/TodoList';
-
+import Footer from '../../components/Footer';
+import TodoItem from '../../components/TodoItem';
 import './index.scss'
 
 
 @inject('counterStore')
+@inject('todoStore')
 @observer
 class Index extends Component {
 
@@ -18,7 +20,6 @@ class Index extends Component {
   componentWillMount () { }
 
   componentWillReact () {
-    console.log('componentWillReact')
   }
 
   componentDidMount () { }
@@ -46,14 +47,17 @@ class Index extends Component {
 
   render () {
     const { counterStore: { counter } } = this.props
+    const { todoStore: { currentTodos } } = this.props
     return (
       <View className='index'>
-        <Button onClick={this.increment}>+</Button>
+        {/* <Button onClick={this.increment}>+</Button>
         <Button onClick={this.decrement}>-</Button>
-        <Button onClick={this.incrementAsync}>Add Async</Button>
+        <Button onClick={this.incrementAsync}>Add Async</Button> */}
         <Text>{counter}</Text>
         <Header />
-        <TodoList />
+        <TodoList currentTodos={currentTodos}/>
+        <Footer />
+        <TodoItem />
       </View>
     )
   }
