@@ -4,6 +4,7 @@ class Store {
     @observable todos = [];
     @observable id = 0;
     @observable currentTodos = [];
+    @observable test = '';
 
     @action
     addTodo(todo) {
@@ -14,6 +15,18 @@ class Store {
     @action
     setCurrentTodos(todos) {
         this.currentTodos = todos;
+    }
+
+    @action
+    testfunc(str) {
+        this.test = str;
+        console.log('test', this.test);
+    }
+
+    @action
+    setTest() {
+        setTimeout(this.testfunc('hello world'), 1000)
+        // this.testfunc('hello world');
     }
 
     @action
@@ -29,14 +42,6 @@ class Store {
     @computed
     get unCompletedTodos() {
         return this.todos.filter(item => item.completed === false);
-    }
-
-    get todos() {
-        return this.todos;
-    }
-
-    get currentTodos() {
-        return this.currentTodos;
     }
 
 

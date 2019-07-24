@@ -51,6 +51,7 @@ class Footer extends Component {
         <Button onClick={() => this.showAll(todoStore)}>所有</Button>
         <Button onClick={() => this.showUnCompleted(todoStore)}>未完成</Button>
         <Button onClick={() => this.showCompleted(todoStore)}>已完成</Button>
+        <Button onClick={() => todoStore.setTest()}>测试</Button>
       </View>
     )
   }
