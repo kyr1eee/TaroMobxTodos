@@ -2,6 +2,7 @@
 Taro + Mobx 的 todos 应用
 
 # mobx
+![流程图](https://github.com/kyr1eee/TaroMobxTodos/blob/master/src/mobx.png)
 ## @observal  
 可观察变量
 ```
