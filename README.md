@@ -2,9 +2,12 @@
 Taro + Mobx 的 todos 应用
 
 # mobx
-- @observal : 观察变量
-- @computed : 计算属性,依赖,同vue
-- @action : 改变observal变量
+## @observal
+观察变量
+## @computed
+计算属性,依赖,同vue
+## @action
+改变observal变量
 - @action.bound : 绑定action中的this
 - @inject : 注入store进入组件props, provider包括组件, 像react context一样传递store
 - @observer : 响应式组件, 观察组件state, props是否变化, autorun包裹render函数, 变化则强制更新视图
